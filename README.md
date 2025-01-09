@@ -3,6 +3,11 @@
 Robots are being sent to explore the Martian surface. These robots move across a rectangular grid that represents the surface of Mars, following simple step-by-step instructions sent from Earth.
 This project is an interactive React app that lets you simulate how these robots move by providing input commands such as R, L, F. It shows their path on the grid and brings their exploration to life with animations.
 
+## Using the app
+
+- Enter a command such as RRRFF
+- Press the Start Simulation button
+
 ## Technologies Used
 
 - React
