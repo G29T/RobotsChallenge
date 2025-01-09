@@ -5,7 +5,7 @@ const InputCommands: React.FC<InputCommandsProps> = ({ commands, setCommands, is
     return (
         <div className="w-full max-w-lg px-4">
             <label htmlFor="commands" className="block text-lg font-semibold mb-2">
-                Enter Commands R, L, or F:
+                Enter Commands R, L or F:
             </label>
             <input
                 id="commands"
