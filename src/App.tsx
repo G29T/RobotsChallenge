@@ -40,7 +40,8 @@ const App: React.FC = () => {
 
   const initialiseRobot = () => {
     if (!commands) return;
-
+    
+    setCurrentCommandIndex(0); 
     setIsMoving(true);
   };
 
