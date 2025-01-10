@@ -40,14 +40,14 @@ const App: React.FC = () => {
 
   const initialiseRobot = () => {
     if (!commands) return;
-    
+
     setCurrentCommandIndex(0); 
     setIsMoving(true);
   };
 
   return (
     <div className="App p-6">
-        <h1 className="text-2xl font-bold mb-5 text-center">CAIS Robots Challenge</h1>
+        <h1 className="text-2xl font-bold mb-5 text-center">Robots Challenge</h1>
         <div className="flex flex-col gap-10 items-center">
           <InputCommands
             commands={commands}

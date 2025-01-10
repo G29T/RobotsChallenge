@@ -5,6 +5,6 @@ import App from './App';
 describe('App Component', () => {
   it('renders the App component', () => {
     render(<App />);
-    expect(screen.getByText(/CAIS Robots Challenge/i)).toBeInTheDocument();
+    expect(screen.getByText(/Robots Challenge/i)).toBeInTheDocument();
   });
 });
