@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Grid from './componets/grid/Grid';
 import InputCommands from './componets/input-commands/InputCommands';
-import { CardinalDirection, Command, turnLeft, turnRight, moveForward } from './utils/robotUtils'; 
+import { CardinalDirection, Command, turnLeft, turnRight, moveForward, turnDirection, moveBackwards } from './utils/robotUtils'; 
 import './App.css';
 import './index.css';
 
@@ -15,6 +15,7 @@ const App: React.FC = () => {
   const [isMoving, setIsMoving] = useState(false);
 
   useEffect(() => {
+    console.log('IS MOVING ' + isMoving);
     if (isMoving && currentCommandIndex < commands.length) {
       const command = commands[currentCommandIndex] as Command;
       const timer = setTimeout(() => {
@@ -30,11 +31,13 @@ const App: React.FC = () => {
 
   const executeCommand = (command: Command) => {
     if (command === 'L') {
-      setRobotCardinalDirection((prevDirection) => turnLeft(prevDirection));
+      setRobotCardinalDirection((prevDirection) => turnDirection(prevDirection, command));
     } else if (command === 'R') {
-      setRobotCardinalDirection((prevDirection) => turnRight(prevDirection));
+      setRobotCardinalDirection((prevDirection) => turnDirection(prevDirection, command));
     } else if (command === 'F') {
-      setRobotCoordinates((prevPosition) => moveForward(prevPosition, robotCardinalDirection, gridSize));
+      setRobotCoordinates((prevPosition) => moveForward(prevPosition, robotCardinalDirection, gridSize, setIsMoving));
+    } else if (command === 'B') {
+      setRobotCoordinates((prevPosition) => moveBackwards(prevPosition, robotCardinalDirection, gridSize));
     }
   };
 

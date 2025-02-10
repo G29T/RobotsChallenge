@@ -12,7 +12,7 @@ const InputCommands: React.FC<InputCommandsProps> = ({ commands, setCommands, is
                 type="text"
                 className="border p-2 w-full mb-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={commands}
-                onChange={(e) => setCommands(e.target.value.toUpperCase().replace(/[^RLF]/g, ''))}
+                onChange={(e) => setCommands(e.target.value.toUpperCase().replace(/[^RLFB]/g, ''))}
                 placeholder="Example: RFRFRFRFL"
             />
             <button
